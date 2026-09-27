@@ -65,18 +65,25 @@ function fetchGameData(gameNumber) {
   fetch("/api/items")
     .then((response) => response.json())
     .then((json) => {
+      console.log(`Raw JSON response for game number ${gameNumber}:`, json);
       const items = json.items;
+      console.log(`Fetched ${items.length} items for game number ${gameNumber}`);
       const item = new RNG(getDateSeed()).choice(items);
       productName = item.item_name;
-      productPrice = parsePrice(item.price) + parsePrice(item.saving);
+      productPrice = addPrices(item.price, item.saving);
       productImage = item.item_image;
 
       initializeGame();
     });
 }
 
-function parsePrice(price) {
-  return Number.parseFloat(String(price).replace(/[^0-9.-]/g, "")) || 0;
+function addPrices(price1, price2) {
+  const [dollars, cents] = price1.split('.');
+  const [dollars2, cents2] = price2.split('.');
+  const totalCents = (parseInt(dollars) * 100 + parseInt(cents)) + (parseInt(dollars2) * 100 + parseInt(cents2));
+  const totalDollars = Math.floor(totalCents / 100);
+  const remainingCents = totalCents % 100;
+  return `${totalDollars}.${remainingCents.toString().padStart(2, '0')}`;
 }
 
 /*
