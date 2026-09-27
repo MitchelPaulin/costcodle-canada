@@ -60,18 +60,23 @@ function playGame() {
   Acquiring Game Data
 */
 
-//Fetches the current day's game data from the json and starts game
+//Fetches live game data and starts the game
 function fetchGameData(gameNumber) {
-  fetch("./games.json")
+  fetch("/api/items")
     .then((response) => response.json())
     .then((json) => {
-      productName = json[`game-${gameNumber}`].name;
-      productPrice = json[`game-${gameNumber}`].price;
-      productPrice = Number(productPrice.slice(1, productPrice.length));
-      productImage = json[`game-${gameNumber}`].image;
+      const items = json.items;
+      const item = new RNG(getDateSeed()).choice(items);
+      productName = item.item_name;
+      productPrice = parsePrice(item.price) + parsePrice(item.saving);
+      productImage = item.item_image;
 
       initializeGame();
     });
+}
+
+function parsePrice(price) {
+  return Number.parseFloat(String(price).replace(/[^0-9.-]/g, "")) || 0;
 }
 
 /*
@@ -511,5 +516,12 @@ function getGameNumber() {
   let dayDifference = timeDifference / (1000 * 3600 * 24);
 
   return Math.ceil(dayDifference) + 1;
+}
+
+function getDateSeed() {
+  const currentDate = new Date();
+  return currentDate.getFullYear() * 10000
+    + (currentDate.getMonth() + 1) * 100
+    + currentDate.getDate();
 }
 

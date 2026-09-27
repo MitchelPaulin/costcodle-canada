@@ -65,6 +65,16 @@ A new COSTCODLE is available every day!
 * [![CSS][CSS3]][CSS-url]
 * [![JS][JavaScript]][JavaScript-url]
 
+### Run Locally
+
+Requires Node.js 18 or newer.
+
+```bash
+node server.js
+```
+
+Then open http://localhost:8000. The local server serves the site and proxies live item data through `/api/items` to avoid browser CORS restrictions.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
