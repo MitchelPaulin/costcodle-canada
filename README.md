@@ -27,24 +27,10 @@
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. 
 
 [![Product Name Screen Shot][product-screenshot]](https://costcodle.com)
 
@@ -75,8 +61,6 @@ node server.js
 
 Then open http://localhost:8000. The local server serves the site and proxies live item data through `/api/items` to avoid browser CORS restrictions.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 ## License
 
@@ -84,25 +68,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTACT -->
-## Contact
-
-Zachary Kermitz  - zakkermitz@gmail.com
-
-Project Link: [https://github.com/KermWasTaken/costcodle](https://github.com/KermWasTaken/costcodle)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-This project would not have been possible without the following resources:
-
-* [Costco Food Database](https://costcofdb.com/food-database)
-* [Wordle](https://www.nytimes.com/games/wordle/index.html)
-* [Tradle](https://oec.world/en/tradle/)
-* [Currency Format Input Field by Wade Williams](https://codepen.io/559wade/pen/LRzEjj)
-* [Best-README-Template](https://github.com/othneildrew/Best-README-Template/)
+Zachary Kermitz  - zakkermitz@gmail.com for creating the base I could adapt to the Canadian version 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
