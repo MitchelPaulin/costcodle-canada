@@ -16,8 +16,8 @@ let warningTimeout;
   Global variable constants
 */
 
-//The day Costcodle was launched. Used to find game number each day
-const costcodleStartDate = new Date("09/21/2023");
+//The day Costcodle Canada was launched. Used to find game number each day
+const costcodleStartDate = new Date("09/27/2026");
 const gameNumber = getGameNumber();
 
 //Elements with event listeners to play the game
@@ -212,7 +212,7 @@ function handleInput() {
 }
 
 function copyStats() {
-  let output = `Costcodle Canada #${gameNumber}`;
+  let output = `Costcodle Canada 🇨🇦 #${gameNumber}`;
   if (!gameState.hasWon) {
     output += ` X/6\n`;
   } else {
@@ -260,12 +260,12 @@ function copyStats() {
         .share({
           title: "COSTCODLE 🇨🇦",
           text: output,
-          url: "https://costcodle.com",
+          url: "https://costcodle-canada.onrender.com/",
         })
         .catch((error) => console.error("Share failed:", error));
     }
   } else {
-    output += `https://costcodle.com`;
+    output += `https://costcodle-canada.onrender.com/`;
     navigator.clipboard.writeText(output);
     displayToast();
   }
