@@ -24,7 +24,7 @@
 This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. Unlike the original it also pulls data from a live database rather than using hardcoded games and prices. It also strips out some of the tracking telemetry in the original.
 
 <div align="center">
-  [![Product Name Screen Shot][product-screenshot]](https://costcodle-canada.onrender.com/)
+  <img src="assets/costcodle.png">
 </div>
 
 Guess the COSTCODLE in 6 tries.
@@ -55,8 +55,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Acknowledgments
 
 Zachary Kermitz  - zakkermitz@gmail.com for creating the base I could adapt to the Canadian version 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: assets/costcodle.png
