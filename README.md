@@ -30,7 +30,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. 
+This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. Unlike the original it also pulls data from a live database rather than using hardcoded games and prices. 
 
 [![Product Name Screen Shot][product-screenshot]](https://costcodle.com)
 
