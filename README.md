@@ -21,7 +21,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. Unlike the original it also pulls data from a live database rather than using hardcoded games and prices. It also strips out some of the tracking telemetry in the original.
+This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. Unlike the original it also pulls data from a live database, namely https://www.cocopricetracker.ca/, rather than using hardcoded games and prices. It also strips out some of the tracking telemetry in the original.
 
 <div align="center">
   <img src="assets/costcodle.png">
