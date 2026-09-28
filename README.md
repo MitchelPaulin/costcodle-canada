@@ -15,8 +15,6 @@
     <br />
     <a href="https://costcodle-canada.onrender.com/">View Demo</a>
   </p>
-  
-[![MIT License][license-shield]][license-url]
 
 </div>
 
@@ -25,7 +23,9 @@
 
 This is an adapted version of COSTCODLE for Canadians that uses Canadian dollars. Unlike the original it also pulls data from a live database rather than using hardcoded games and prices. It also strips out some of the tracking telemetry in the original.
 
-[![Product Name Screen Shot][product-screenshot]](https://costcodle-canada.onrender.com/)
+<div align="center">
+  [![Product Name Screen Shot][product-screenshot]](https://costcodle-canada.onrender.com/)
+</div>
 
 Guess the COSTCODLE in 6 tries.
 
