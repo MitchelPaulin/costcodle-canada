@@ -53,7 +53,7 @@ const gameState = JSON.parse(localStorage.getItem("state")) || {
 playGame();
 
 function playGame() {
-  fetchGameData(getGameNumber());
+  fetchGameData();
 }
 
 /*
@@ -61,13 +61,11 @@ function playGame() {
 */
 
 //Fetches live game data and starts the game
-function fetchGameData(gameNumber) {
+function fetchGameData() {
   fetch("/api/items")
     .then((response) => response.json())
     .then((json) => {
-      console.log(`Raw JSON response for game number ${gameNumber}:`, json);
       const items = json.items;
-      console.log(`Fetched ${items.length} items for game number ${gameNumber}`);
       const item = new RNG(getDateSeed()).choice(items);
       productName = item.item_name;
       productPrice = addPrices(item.price, item.saving);
@@ -214,7 +212,7 @@ function handleInput() {
 }
 
 function copyStats() {
-  let output = `Costcodle #${gameNumber}`;
+  let output = `Costcodle Canada #${gameNumber}`;
   if (!gameState.hasWon) {
     output += ` X/6\n`;
   } else {
@@ -260,7 +258,7 @@ function copyStats() {
     if (navigator.canShare) {
       navigator
         .share({
-          title: "COSTCODLE",
+          title: "COSTCODLE 🇨🇦",
           text: output,
           url: "https://costcodle.com",
         })
@@ -435,7 +433,7 @@ function switchState(event) {
   }
 
   if (overlayElem.style.display === "flex") {
-    title.innerHTML = `COSTCO<span class="costco-blue">DLE</span>`;
+    title.innerHTML = `COSTCO 🇨🇦<span class="costco-blue">DLE</span>`;
     overlayElem.style.display = "none";
     return;
   }

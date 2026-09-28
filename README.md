@@ -7,7 +7,7 @@
     <img src="assets/CD.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">COSTCODLE</h3>
+<h3 align="center">COSTCODLE 🇨🇦</h3>
 
   <p align="center">
     A Wordle-esque daily guessing game for Costco food products!

@@ -83,5 +83,5 @@ async function fetchLatestItems() {
 }
 
 server.listen(port, "0.0.0.0", () => {
-  console.log(`COSTCODLE running at http://localhost:${port}`);
+  console.log(`COSTCODLE 🇨🇦 running at http://localhost:${port}`);
 });
