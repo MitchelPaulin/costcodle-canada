@@ -71,7 +71,7 @@ function fetchGameData() {
         console.error("Failed to fetch a valid item from the API.");
         return;
       }
-      productName = item.item_name;
+      productName = sanitizeItemName(item.item_name);
       productImage = item.item_image;
       productPrice = addPrices(item.price, item.saving);
 
@@ -94,6 +94,18 @@ function addPrices(price1, price2) {
   const totalDollars = Math.floor(totalCents / 100);
   const remainingCents = totalCents % 100;
   return `${totalDollars}.${remainingCents.toString().padStart(2, '0')}`;
+}
+
+/*
+  Sanitize item name by removing possible prices from the title
+*/
+function sanitizeItemName(name) {
+  if (!name) {
+    console.error("Item name is not defined.");
+    return "";
+  }
+  name = name.replace(/\$\d+(\.\d{2})?/, '');
+  return name.trim();
 }
 
 /*
