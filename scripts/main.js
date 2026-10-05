@@ -67,15 +67,27 @@ function fetchGameData() {
     .then((json) => {
       const items = json.items;
       const item = new RNG(getDateSeed()).choice(items);
+      if (item == null || !item.item_name || !item.item_image) {
+        console.error("Failed to fetch a valid item from the API.");
+        return;
+      }
       productName = item.item_name;
-      productPrice = addPrices(item.price, item.saving);
       productImage = item.item_image;
+      productPrice = addPrices(item.price, item.saving);
 
       initializeGame();
     });
 }
 
 function addPrices(price1, price2) {
+  if (!price1) {
+    console.error("Base price is not defined.");
+  }
+
+  if (!price2) {
+    console.warn("Additional price is not defined.");
+    price2 = "0.00";
+  }
   const [dollars, cents] = price1.split('.');
   const [dollars2, cents2] = price2.split('.');
   const totalCents = (parseInt(dollars) * 100 + parseInt(cents)) + (parseInt(dollars2) * 100 + parseInt(cents2));
